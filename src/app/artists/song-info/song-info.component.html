@@ -1,0 +1,40 @@
+<header class="bg-primary text-white">
+  <div class="container text-center">
+    <h1>Song Info</h1>
+    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+
+        <div *ngIf="song">
+          <div class="row">
+            <div class="col-md-12">
+
+              <div class="text-center">
+                Releasing on {{ song.releaseDate | date }}
+              </div>
+              <div class="media rounds">
+                <div class="media-left" *ngIf="song.artworkUrl100">
+                  <a href="#">
+                    <img class="media-object" [src]="song.artworkUrl100" alt="...">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">{{ song.collectionName }} : {{ song.artistName }}</h4>
+                  Genre: {{ song.primaryGenreName }} <br />
+                  {{ song.trackPrice }}{{ song.currency }}
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,29 @@
+<div class="album py-5 bg-light">
+  <div class="container" *ngIf="songs">
+
+    <div class="row">
+      <div class="col-md-3" *ngFor="let song of songs.results">
+        <div class="card mb-4 shadow-sm">
+            
+              <div class="media-center" *ngIf="song.artworkUrl100">
+                <img class="media-object" [src]="song.artworkUrl100" alt="...">
+              </div>
+            
+          <div class="card-body">
+            <p class="card-text">{{ song.collectionName }}</p>
+            <h6>
+                <b>{{ song.artistName }}</b> <span class="float-right">{{ song.trackPrice }} {{ song.currency }}</span>
+            </h6>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button (click)="info(song)" type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+              </div>
+              <small class="text-muted">{{ song.releaseDate | date:"mediumDate" }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>

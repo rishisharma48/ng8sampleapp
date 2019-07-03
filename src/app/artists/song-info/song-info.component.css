@@ -1,0 +1,11 @@
+.rounds {
+    border: 1px solid #cccccc;
+    margin: 0 5px 5px 0;
+    min-height: 100px;
+}
+.media-body {
+    padding: 5px 0 0 8px;
+}
+.media-heading {
+    font-size: 17px;
+}
